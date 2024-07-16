@@ -8,11 +8,43 @@
         "documentation": {}
     },
     {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "Enum",
         "importPath": "enum",
         "description": "enum",
         "isExtraImport": true,
         "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Rectangle",
+        "importPath": "shapes",
+        "description": "shapes",
+        "isExtraImport": true,
+        "detail": "shapes",
+        "documentation": {}
+    },
+    {
+        "label": "Square",
+        "importPath": "shapes",
+        "description": "shapes",
+        "isExtraImport": true,
+        "detail": "shapes",
         "documentation": {}
     },
     {
@@ -94,6 +126,96 @@
         "description": "shapes",
         "peekOfCode": "class Square(Rectangle):\n    def __init__(self, square_length):\n        super().__init__(square_length, square_length)",
         "detail": "shapes",
+        "documentation": {}
+    },
+    {
+        "label": "AliveStatus",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class AliveStatus(Enum):\n    Deceased = 0\n    Alive = 1\nclass Person:\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.dob = dob\n        self.alive = alive\n    def update_first_name(self, first_name: str):",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Person",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class Person:\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.dob = dob\n        self.alive = alive\n    def update_first_name(self, first_name: str):\n        self.first_name = first_name\n    def update_last_name(self, last_name: str):\n        self.last_name = last_name",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Instructor",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class Instructor(Person):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, instructor_id: dict):\n        super().__init__(first_name, last_name, dob, alive)\n        self.instructor_id = instructor_id\nclass Student(Person):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive)\n        self.student_id = student_id\nclass ZipCodeStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class Student(Person):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive)\n        self.student_id = student_id\nclass ZipCodeStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass HighSchoolStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "ZipCodeStudent",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class ZipCodeStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass HighSchoolStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass Classroom:\n    def __init__(self):\n        self.students = []\n        self.instructors = []",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "HighSchoolStudent",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class HighSchoolStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass Classroom:\n    def __init__(self):\n        self.students = []\n        self.instructors = []\n    def add_instructor(self, instructor: Instructor):\n        self.instructors.append(instructor)\n    def remove_instructor(self, instructor_id: dict):",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Classroom",
+        "kind": 6,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "class Classroom:\n    def __init__(self):\n        self.students = []\n        self.instructors = []\n    def add_instructor(self, instructor: Instructor):\n        self.instructors.append(instructor)\n    def remove_instructor(self, instructor_id: dict):\n        self.instructors = [instructor for instructor in self.instructors if instructor.instructor_id != instructor_id]\n    def add_student(self, student: Student):\n        self.students.append(student)",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "test_classroom",
+        "kind": 2,
+        "importPath": "test.gradebook",
+        "description": "test.gradebook",
+        "peekOfCode": "def test_classroom():\n    classroom = Classroom()\n    instructor = Instructor(\"John\", \"Doe\", date(1980, 1, 1), AliveStatus.Alive, {\"id\": 1})\n    student = Student(\"Jane\", \"Smith\", date(2000, 2, 2), AliveStatus.Alive, {\"id\": 2})\n    classroom.add_instructor(instructor)\n    classroom.add_student(student)\n    assert len(classroom.instructors) == 1\n    assert len(classroom.students) == 1\n    classroom.remove_instructor({\"id\": 1})\n    classroom.remove_student({\"id\": 2})",
+        "detail": "test.gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "test_rectangle_class",
+        "kind": 2,
+        "importPath": "test.shapes",
+        "description": "test.shapes",
+        "peekOfCode": "def test_rectangle_class():\n    rectangle = Rectangle(5, 10)\n    assert rectangle.area() == 50\n    assert rectangle.perimeter() == 30\ndef test_square_class():\n    square = Square(7)\n    assert square.area() == 49\n    assert square.perimeter() == 28",
+        "detail": "test.shapes",
+        "documentation": {}
+    },
+    {
+        "label": "test_square_class",
+        "kind": 2,
+        "importPath": "test.shapes",
+        "description": "test.shapes",
+        "peekOfCode": "def test_square_class():\n    square = Square(7)\n    assert square.area() == 49\n    assert square.perimeter() == 28",
+        "detail": "test.shapes",
         "documentation": {}
     }
 ]
