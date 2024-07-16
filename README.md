@@ -32,6 +32,7 @@ rect.area()
 
 square = shapes.Square(8)
 square.area()
+square.perimeter()
 # 64
 
 square.perimeter()
