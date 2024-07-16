@@ -1,0 +1,99 @@
+[
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "AliveStatus",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class AliveStatus(Enum):\n    Deceased = 0\n    Alive = 1\nclass Person:\n    def __init__(self, first_name: str, last_name: str, dob: date,  alive: AliveStatus):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.dob = dob\n        self.alive = alive\n    def update_first_name(self, first_name: str):",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Person",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class Person:\n    def __init__(self, first_name: str, last_name: str, dob: date,  alive: AliveStatus):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.dob = dob\n        self.alive = alive\n    def update_first_name(self, first_name: str):\n        self.first_name = first_name\n    def update_last_name(self, last_name: str):\n        self.last_name = last_name",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Instructor",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class Instructor(Person):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, instructor_id: dict):\n        super().__init__(first_name, last_name, dob, alive)\n        self.instructor_id = instructor_id\nclass Student(Person):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive)\n        self.student_id = student_id\nclass ZipCodeStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class Student(Person):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive)\n        self.student_id = student_id\nclass ZipCodeStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass HighSchoolStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "ZipCodeStudent",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class ZipCodeStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass HighSchoolStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass Classroom:\n    def __init__(self):\n        self.students = []\n        self.instructors = []",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "HighSchoolStudent",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class HighSchoolStudent(Student):\n    def __init__(self, first_name: str, last_name: str, dob: date, alive: AliveStatus, student_id: dict):\n        super().__init__(first_name, last_name, dob, alive, student_id)\nclass Classroom:\n    def __init__(self):\n        self.students = []\n        self.instructors = []\n    def add_instructor(self, instructor: Instructor):\n        self.instructors.append(instructor)\n    def remove_instructor(self, instructor_id: dict):",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Classroom",
+        "kind": 6,
+        "importPath": "gradebook",
+        "description": "gradebook",
+        "peekOfCode": "class Classroom:\n    def __init__(self):\n        self.students = []\n        self.instructors = []\n    def add_instructor(self, instructor: Instructor):\n        self.instructors.append(instructor)\n    def remove_instructor(self, instructor_id: dict):\n        self.instructors = [instructor for instructor in self.instructors if instructor.instructor_id != instructor_id]\n    def add_student(self, student: Student):\n        self.students.append(student)",
+        "detail": "gradebook",
+        "documentation": {}
+    },
+    {
+        "label": "Rectangle",
+        "kind": 6,
+        "importPath": "shapes",
+        "description": "shapes",
+        "peekOfCode": "class Rectangle:\n    def __init__(self, length, width):\n        self.length = length\n        self.width = width\n    def area(self):\n        return self.length * self.width\n    def perimeter(self):\n        return 2 * (self.length + self.width)\nclass Square(Rectangle):\n    def __init__(self, square_length):",
+        "detail": "shapes",
+        "documentation": {}
+    },
+    {
+        "label": "Square",
+        "kind": 6,
+        "importPath": "shapes",
+        "description": "shapes",
+        "peekOfCode": "class Square(Rectangle):\n    def __init__(self, square_length):\n        super().__init__(square_length, square_length)",
+        "detail": "shapes",
+        "documentation": {}
+    }
+]
